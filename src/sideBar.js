@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import './sideBar.css';
 
+
 function SideBar() {
     const [sideNavWidth, setSideNavWidth] = useState("0");
     const [mainMarginLeft, setMainMarginLeft] = useState("0");
   
     function openNav() {
-      setSideNavWidth("250px");
-      setMainMarginLeft("250px");
+      setSideNavWidth("300px");
+      setMainMarginLeft("300px");
     }
   
     function closeNav() {
@@ -16,23 +17,22 @@ function SideBar() {
     }
   
     return (
-      <>
-        <div id="sideNav" className="sidenav" style={{ width: sideNavWidth }}>
+      <div>
+        <div id="main"></div>
+        <div id="sideNav"class ="SideNav"style={{ width: sideNavWidth }}>
           <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
             &times;
+        
           </a>
-          <a href="#">Home</a>
-          <a href="#">Education</a>
-          <a href="#">🎼Musical Scores🎼</a>
-          <a href="#">Contact</a>
+          <a href="#Home">Home</a>
+          <a href="#Education">Education</a>
+          <a href="#Achievements">Achievements</a>
+          <a href="#Scores">🎼Musical Scores🎼</a>
+          <a href="#Contact">Contact</a>
         </div>
-  
-        <span onClick={openNav}>open</span>
-  
-        <div id="main" style={{ marginLeft: mainMarginLeft }}>
-          {<p>try out the side bar!!! </p>}
-        </div>
-      </>
+        <span onClick={openNav}>&#9776; </span>
+      </div>
+    
     );
   }
   
